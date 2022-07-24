@@ -12,6 +12,6 @@ namespace Data.Models
         public string? Link { get; set; }  
         public string? Description { get; set; }
         public string? Category { get; set; } 
-        public DateTime PubDate { get; set; }
+        public DateTime? PubDate { get; set; }
     }
 }
