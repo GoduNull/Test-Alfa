@@ -16,7 +16,7 @@ namespace Logic.Managers
         /// </summary>
         /// <param name="items"></param>
         /// <returns></returns>
-        public static async Task WriteTxt(List<Item> items)
+        public static async Task WriteTxtAsync(List<Item> items)
         {
             if (items is not null)
             {
@@ -36,7 +36,7 @@ namespace Logic.Managers
         /// </summary>
         /// <param name="items"></param>
         /// <returns></returns>
-        public static async Task WriteTxt(string items)
+        public static async Task WriteTxtAsync(string items)
         {
             if (items is not null)
             {
@@ -58,7 +58,7 @@ namespace Logic.Managers
                 var paragraphone = OneDoc.Content.Paragraphs.Add();
                 paragraphone.Range.Text = items;
                 paragraphone.Range.Font.Name = "Times New Roman";
-                paragraphone.Range.Font.Size = 16;
+                paragraphone.Range.Font.Size = 14;
                 OneDoc.SaveAs2(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "text.docx"));
                 application.Quit();
             }
@@ -83,7 +83,7 @@ namespace Logic.Managers
                         item.Category + "\n" +
                         item.PubDate.ToString() + "\n\n");
                     paragraphone.Range.Font.Name = "Times New Roman";
-                    paragraphone.Range.Font.Size = 16;
+                    paragraphone.Range.Font.Size = 14;
                 }
                 OneDoc.SaveAs2(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "text.docx"));
                 application.Quit();
